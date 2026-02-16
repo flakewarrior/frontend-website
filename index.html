@@ -3,27 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <title>Tasty Yummy Restaurant</title>
+  <!-- Link to CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Tasty Yummy Restaurant</h1>
 
+  <!-- Menu Grid -->
   <div class="menu">
-    <!-- Example item -->
+    <!-- Chicken Curry -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Chicken Curry</h2>
+      <p>Spicy curry</p>
+      <div class="details">
+        <ul><li>Chicken breast</li><li>Coconut milk</li><li>Curry spices</li><li>Garlic & ginger</li><li>Onions</li><li>Coriander</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Chicken Curry', 12000)">Add - Tsh 12,000</button>
+      </div>
+    </div>
+
+    <!-- Veggie Pizza -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Veggie Pizza</h2>
+      <p>Fresh veggies</p>
+      <div class="details">
+        <ul><li>Tomato sauce</li><li>Mozzarella</li><li>Bell peppers</li><li>Olives</li><li>Mushrooms</li><li>Onions</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Veggie Pizza', 15000)">Add - Tsh 15,000</button>
+      </div>
+    </div>
+
+    <!-- Beef Burger -->
     <div class="menu-item" onclick="toggleDetails(this)">
       <h2>Beef Burger</h2>
-      <p>Juicy beef patty with fresh toppings</p>
+      <p>Juicy beef</p>
       <div class="details">
-        <ul>
-          <li>Beef patty</li><li>Mayonnaise</li><li>Avocado</li>
-          <li>Tomato</li><li>Lettuce</li><li>Sesame bun</li>
-        </ul>
+        <ul><li>Beef patty</li><li>Mayonnaise</li><li>Avocado</li><li>Tomato</li><li>Lettuce</li><li>Sesame bun</li></ul>
         <button onclick="event.stopPropagation(); addToCart('Beef Burger', 10000)">Add - Tsh 10,000</button>
       </div>
     </div>
-    <!-- Repeat for all 10 items -->
+
+    <!-- Truffle Fries -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Truffle Fries</h2>
+      <p>Crispy potatoes</p>
+      <div class="details">
+        <ul><li>Potato fries</li><li>Truffle oil</li><li>Parmesan</li><li>Salt & pepper</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Truffle Fries', 5000)">Add - Tsh 5,000</button>
+      </div>
+    </div>
+
+    <!-- Garlic Crostini -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Garlic Crostini</h2>
+      <p>Toasted bread</p>
+      <div class="details">
+        <ul><li>Baguette slices</li><li>Garlic butter</li><li>Parsley</li><li>Olive oil</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Garlic Crostini', 4500)">Add - Tsh 4,500</button>
+      </div>
+    </div>
+
+    <!-- Velvet Cheesecake -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Velvet Cheesecake</h2>
+      <p>Classic dessert</p>
+      <div class="details">
+        <ul><li>Cream cheese</li><li>Vanilla</li><li>Graham crust</li><li>Whipped cream</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Velvet Cheesecake', 8000)">Add - Tsh 8,000</button>
+      </div>
+    </div>
+
+    <!-- Chocolate Brownie -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Chocolate Brownie</h2>
+      <p>With ice cream</p>
+      <div class="details">
+        <ul><li>Dark chocolate</li><li>Butter</li><li>Flour</li><li>Eggs</li><li>Vanilla</li><li>Ice cream</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Chocolate Brownie', 7000)">Add - Tsh 7,000</button>
+      </div>
+    </div>
+
+    <!-- Grilled Fish -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Grilled Fish</h2>
+      <p>Served with lemon</p>
+      <div class="details">
+        <ul><li>Tilapia fillet</li><li>Lemon slices</li><li>Garlic</li><li>Rosemary</li><li>Olive oil</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Grilled Fish', 14000)">Add - Tsh 14,000</button>
+      </div>
+    </div>
+
+    <!-- Chicken Shawarma -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Chicken Shawarma</h2>
+      <p>Middle Eastern wrap</p>
+      <div class="details">
+        <ul><li>Grilled chicken</li><li>Garlic sauce</li><li>Pickles</li><li>Tomato</li><li>Flatbread</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Chicken Shawarma', 9000)">Add - Tsh 9,000</button>
+      </div>
+    </div>
+
+    <!-- Fresh Juice -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Fresh Juice</h2>
+      <p>Seasonal fruits</p>
+      <div class="details">
+        <ul><li>Mango</li><li>Pineapple</li><li>Passion fruit</li><li>Ice cubes</li><li>Mint</li></ul>
+        <button onclick="event.stopPropagation(); addToCart('Fresh Juice', 4000)">Add - Tsh 4,000</button>
+      </div>
+    </div>
   </div>
 
+  <!-- Cart Section -->
   <div id="cart">
     <h2>Your Cart</h2>
     <ul id="cart-items"></ul>
@@ -66,6 +155,7 @@
     <button class="place-order" onclick="placeOrder()">Place Order</button>
   </div>
 
+  <!-- Link to JS -->
   <script src="script.js"></script>
 </body>
 </html>
