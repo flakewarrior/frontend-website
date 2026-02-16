@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasty Yummy Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tasty Yummy Restaurant</h1>
+
+  <div class="menu">
+    <!-- Example item -->
+    <div class="menu-item" onclick="toggleDetails(this)">
+      <h2>Beef Burger</h2>
+      <p>Juicy beef patty with fresh toppings</p>
+      <div class="details">
+        <ul>
+          <li>Beef patty</li><li>Mayonnaise</li><li>Avocado</li>
+          <li>Tomato</li><li>Lettuce</li><li>Sesame bun</li>
+        </ul>
+        <button onclick="event.stopPropagation(); addToCart('Beef Burger', 10000)">Add - Tsh 10,000</button>
+      </div>
+    </div>
+    <!-- Repeat for all 10 items -->
+  </div>
+
+  <div id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total:</strong> Tsh <span id="cart-total">0</span></p>
+
+    <div class="order-options">
+      <p><strong>Order Type:</strong></p>
+      <label><input type="radio" name="orderType" value="Dine In" onclick="toggleOrderFields()"> Dine In</label>
+      <label><input type="radio" name="orderType" value="Takeaway" onclick="toggleOrderFields()"> Takeaway</label>
+      <label><input type="radio" name="orderType" value="Delivery" onclick="toggleOrderFields()"> Delivery</label>
+    </div>
+
+    <!-- Dine In fields -->
+    <div class="order-options dine-fields" style="display:none;">
+      <label>Table Number: <input type="text" id="tableNumber"></label>
+    </div>
+
+    <!-- Delivery fields -->
+    <div class="order-options delivery-fields" style="display:none;">
+      <label>Address: <input type="text" id="address"></label><br>
+      <label>Phone Number: <input type="text" id="phoneNumber"></label><br>
+      <label>Building: <input type="text" id="building"></label>
+    </div>
+
+    <div class="order-options">
+      <label>Special Instructions: <input type="text" id="instructions"></label>
+    </div>
+
+    <div class="order-options">
+      <p><strong>Payment Method:</strong></p>
+      <label><input type="radio" name="payment" value="Card"> Card</label>
+      <label><input type="radio" name="payment" value="Cash"> Cash</label>
+      <label><input type="radio" name="payment" value="Mobile"> Mobile Pay</label>
+    </div>
+
+    <div class="order-options">
+      <label>Card/Mobile Name: <input type="text" id="payerName"></label>
+    </div>
+
+    <button class="place-order" onclick="placeOrder()">Place Order</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
